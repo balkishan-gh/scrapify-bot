@@ -5,7 +5,9 @@ async function scrapeProduct(url) {
   const page = await browser.newPage();
   await page.goto(url);
 
-  await page.waitForSelector("._30jeq3");
+  const className = "._30jeq3" || "a-price-whole";
+
+  await page.waitForSelector(className);
 
   const price = await page.$eval("._30jeq3", (element) => element.textContent);
 
