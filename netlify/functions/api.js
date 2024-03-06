@@ -46,7 +46,7 @@ client.on("messageCreate", async (message) => {
 
 client.login(process.env.DISCORD_TOKEN);
 
-const router = Router();
+const router = express.Router();
 router.get("/hello", (req, res) => res.send("Hello World!"));
 
 api.use("/api/", router);
